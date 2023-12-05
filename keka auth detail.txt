@@ -1,0 +1,19 @@
+Sign Up 
+
+jwt | passport | guards 
+
+* uuid 
+* First name 
+* last name
+* email
+* Ph 
+* passsword
+* confirm password
+* Role [ user, admin]  (   RBAC )
+
+Login Page
+
+* email | Ph
+* password
+
+

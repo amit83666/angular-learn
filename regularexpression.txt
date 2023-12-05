@@ -1,0 +1,44 @@
+/hey/
+
+^ 
+$
+[a-z]
+[^a-z]
+\d	 numeric 
+\D	 non numeric
+\w    alphanumeric 
+\W   ^alphanumeric
+\s     space
+\S    ^space
+\0    matches null
+\n    new linw character
+\t    tab character
+\u   unicode
+.
+[^]  ^newline
+|       or  choice
+/^\d$/ 
+/^\d?$/
++,*,{n},{n,m}
+/^\d+$/
+
+ // for(let i = 0;i<vowel.length;i++){
+  //   if(str[0]=== vowel[i]){
+  //     const data=str.join("ay");
+  //     return data
+  //   }else{
+  //     const sliceStr = str.slice(1);
+  //     // console.log(sliceStr);
+  //     const data = sliceStr.concat("",`${str[0]}ay`)
+  //     return data;
+  //   }
+  // }
+
+glove
+lovegay
+ovegayl
+
+oveglay
+
+
+

@@ -1,0 +1,19 @@
+css position : static ( default ), absolute, relative, fixed, sticky
+
+display: inlinkle block
+
+
+if relatative we can set top bottom left right ( realative to its normal position and will leave a gap at its normal position)
+
+
+absolute is related to the body or parent  or position
+
+static normal
+
+
+psoition fixed chat with us when we scroll we can see its fixed at his position
+
+fixed : reative to the browser  window;
+
+
+sticky

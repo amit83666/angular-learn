@@ -1,0 +1,23 @@
+relationship
+- OneToOne
+-ManyToOne/OneToMany
+-ManytoMany
+
+Employee table 
+	can reference self (managers and direct reports)
+		if manager is deleted set reference to NULL
+	One-to-One relationship with Contact Info
+	One-to-Many relationship with Tasks
+	Many-to-Many relationship with meetings
+
+Contact Info Table
+	One-to-One relationship with Employee
+	Delete if Employee is deleted
+
+Task Table
+	Many-to-One relationship with Employee
+	set employeeId to Null if Employee is deleted
+
+Meeting table
+	Many-to-Many relationship with Employee (via relationship table )
+	Remove Employee as attendee id Employee is deleted

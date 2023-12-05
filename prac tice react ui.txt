@@ -1,0 +1,285 @@
+.home-section {
+  /* border: 2px solid black; */
+  display: flex;
+  flex-direction: column;
+}
+.nav {
+  height: 52px;
+  padding-left: 14px;
+  padding-right: 14px;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  /* gap: 61px; */
+}
+
+.nav-item {
+  display: flex;
+  gap: 61px;
+}
+.nav-icon {
+  height: 25px;
+  width: 25px;
+}
+.nav-brand {
+  height: 25px;
+  width: 78px;
+  background: #d3d3d3;
+}
+
+.show-case {
+  height: 180px;
+  background: #d3d3d3;
+  border-radius: 10px;
+  margin: 43px 18px 38px;
+}
+
+.search-block {
+  display: flex;
+  flex-direction: row;
+  height: 44px;
+  margin: 18px;
+  border-radius: 10px;
+  background: #d3d3d3;
+  justify-content: start;
+  align-items: center;
+  flex-grow: 0;
+  gap: 14px;
+}
+
+.search {
+  flex: 1;
+  width: 562px;
+  height: 33px;
+  color: #000;
+  border: none;
+  margin: 16px;
+  background: transparent;
+}
+.search-icon {
+  height: 25px;
+  width: 25px;
+  margin: 16px;
+}
+.drop-down-search {
+  display: flex;
+  align-items: center;
+  margin: 43px 18px 38px;
+  justify-content: space-between;
+}
+.popular-now {
+  height: 44px;
+  flex-basis: 128px;
+}
+.item-photos-container {
+  display: flex;
+  flex-basis: 375px;
+  height: 642px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.box {
+  flex-wrap: wrap;
+  width: 142px;
+  height: 184px;
+  margin: 40px;
+  background: #c2d1d9;
+  gap: 2px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+.image {
+  flex-basis: 68px;
+  height: 56px;
+  flex-shrink: 0;
+  align-self: center;
+  justify-self: center;
+  border: 2px solid black;
+  margin: 40px 15px 15px 33px;
+}
+.box .des {
+  display: flex;
+  flex-basis: 125.262px;
+  height: 42px;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex-shrink: 0;
+
+  color: #505d68;
+
+  text-align: center;
+  font-family: Ubuntu;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700px;
+  line-height: 12px; /* 100% */
+}
+
+.slider-button{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.nextbutton{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+---------------------------------------
+import { RxHamburgerMenu } from "react-icons/rx";
+import { BsShop, BsCart3, BsSliders } from "react-icons/bs";
+import { FaSearch, FaArrowRight } from "react-icons/fa";
+
+function Home() {
+  return (
+    <div className="home-section">
+      <div className="nav">
+        <div className="nav-item">
+          <div className="nav-icon">
+            <RxHamburgerMenu />
+          </div>
+          <div className="nav-brand">Brand</div>
+        </div>
+        <div className="nav-item">
+          <div className="nav-icon">
+            <BsShop />
+          </div>
+          <div className="nav-icon">
+            <BsCart3 />
+          </div>
+        </div>
+      </div>
+
+      <div className="show-case"></div>
+
+      <div className="search-block">
+        <input className="search" type="text" placeholder="Search" />
+        <div className="search-icon">
+          <FaSearch />
+        </div>
+      </div>
+      <div className="drop-down-search">
+        <div>
+          <select className="popular-now" id="dropdown" name="latest">
+            <option value="popular now">popular now</option>
+            <option value="clothes">clothes</option>
+            <option value="electronic">electronic</option>
+            <option value="mobile">mobile</option>
+          </select>
+        </div>
+        <div className="nav-icon">
+          <BsSliders />
+        </div>
+      </div>
+
+      <div className="item-photos-container">
+        <div className="box">
+          <img className="image" src="./bird.png" alt="pic" />
+          <div className="des">
+            <h3>Lyle & Scoott Men's Short Sleeve Camo Pocket</h3>
+          </div>
+          <div>
+            <p>US$76</p>
+          </div>
+        </div>
+
+        <div className="box">
+          <img className="image" src="./bird.png" alt="pic" />
+          <div className="des">
+            <h3>Lyle & Scoott Men's Short Sleeve Camo Pocket</h3>
+          </div>
+          <div>
+            <p>US$76</p>
+          </div>
+        </div>
+
+        <div className="box">
+          <img className="image" src="./bird.png" alt="pic" />
+          <div className="des">
+            <h3>Lyle & Scoott Men's Short Sleeve Camo Pocket</h3>
+          </div>
+          <div>
+            <p>US$76</p>
+          </div>
+        </div>
+
+        {/* <div className="box">
+          <img className="image" src="./bird.png" alt="pic" />
+          <div className="des">
+            <h3>Lyle & Scoott Men's Short Sleeve Camo Pocket</h3>
+          </div>
+          <div>
+            <p>US$76</p>
+          </div>
+        </div>
+
+        <div className="box">
+          <img className="image" src="./bird.png" alt="pic" />
+          <div className="des">
+            <h3>Lyle & Scoott Men's Short Sleeve Camo Pocket</h3>
+          </div>
+          <div>
+            <p>US$76</p>
+          </div>
+        </div> */}
+
+        <div className="box">
+          <img className="image" src="./bird.png" alt="pic" />
+          <div className="des">
+            <h3>Lyle & Scoott Men's Short Sleeve Camo Pocket</h3>
+          </div>
+          <div>
+            <p>US$76</p>
+          </div>
+        </div>
+      </div>
+      <div className="slider-button">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="64"
+          height="11"
+          viewBox="0 0 64 11"
+          fill="none"
+        >
+          <path
+            opacity="0.3"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M25.081 8.44645C27.4693 8.44645 29.4054 6.84746 29.4054 4.87502C29.4054 2.90257 27.4693 1.30359 25.081 1.30359C22.6928 1.30359 20.7567 2.90257 20.7567 4.87502C20.7567 6.84746 22.6928 8.44645 25.081 8.44645Z"
+            fill="#4D4D4D"
+          />
+          <path
+            opacity="0.3"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M42.3783 8.44645C44.7665 8.44645 46.7026 6.84746 46.7026 4.87502C46.7026 2.90257 44.7665 1.30359 42.3783 1.30359C39.99 1.30359 38.054 2.90257 38.054 4.87502C38.054 6.84746 39.99 8.44645 42.3783 8.44645Z"
+            fill="#4D4D4D"
+          />
+          <path
+            opacity="0.3"
+            d="M11.1081 5.5C11.1081 7.53866 9.03284 9.5 6.05406 9.5C3.07527 9.5 1 7.53866 1 5.5C1 3.46134 3.07527 1.5 6.05406 1.5C9.03284 1.5 11.1081 3.46134 11.1081 5.5Z"
+            stroke="#4D4D4D"
+            stroke-width="2"
+          />
+          <path
+            opacity="0.3"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M59.6756 7.82145C62.0639 7.82145 64 6.22246 64 4.25002C64 2.27757 62.0639 0.678589 59.6756 0.678589C57.2874 0.678589 55.3513 2.27757 55.3513 4.25002C55.3513 6.22246 57.2874 7.82145 59.6756 7.82145Z"
+            fill="#4D4D4D"
+          />
+        </svg>
+        <div className="nextbutton"><div><p>NEXT</p></div><div><FaArrowRight /></div></div>
+      
+
+      </div>
+    </div>
+  );
+}
+export default Home;

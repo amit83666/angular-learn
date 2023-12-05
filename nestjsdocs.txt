@@ -1,0 +1,60 @@
+nestjs
+
+Application Context
+
+Host               -       http                          micro-service				web-sockets
+--------------------------------------------------------------------------------------------------
+context type   -       http				rpc(microservice)				ws
+ getType()		switchToHttp()	switchToRpc()			switchToWs()
+				ArgumentHost	ArgumentHost			ArgumentHost
+
+getArgs()
+getArgsIndex()
+
+
+ExecutionContext
+( Extends ArgumentsHost )
+1 getClass()  -----------------controller			|GET
+2 getHandler()---------------requestHandler		|GET
+
+
+
+(argument hosts) class in nestjs about the context
+1 getType()
+2 switchToHttp()  --------httpArgumentHost
+
+
+we have three  immportant class
+
+1 HTTP (HttpArgumentsHost)
+* getRequest()
+* getResponse()
+* getNext()
+
+2 WEB-SOCKETS (WsArgumentsHost)
+* getData()
+* getClient()
+
+3 MICRO-SERVICE
+* getData()
+* getContext()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

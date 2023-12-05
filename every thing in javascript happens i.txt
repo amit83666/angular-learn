@@ -1,0 +1,672 @@
+1  "every thing in javascript happens inside an (execution context)"
+2  "Javascript is a synchronous single-threaded language"
+
+execution context has two things 
+1 Memory (variable environment)
+2 code (thread in Execution)
+
+in memory we can store the data in key value form 
+in code we do the execution code line by line
+
+what happen when you run javascript code?
+execution context is created
+
+
+var n=2;
+function square (num) {
+	var ans = num * num;
+	return ans;
+}
+var square2 = square(n);
+var square4 = square(4);
+
+1 global execution context
+
+first (memory creation phase)
+second (code creation phase)
+----------------------------------------------------|--------------------------------------------------------
+MEMORY CODE                                          | CODE
+n:undefined	now 2 in second phase						 
+square:{whole code}					 |								
+square2:undefined						 |     execution context again when functon invoked
+square4:undefined
+
+
+
+"call stack maintains the order of execution of  execution contexts"
+call stack is also known as many names
+1 execution context stack
+2 program stack
+3 control stack
+4 runtime stack
+5 machine stack
+
+hoisting (variable and function)
+
+getName();
+console.log(x);
+console.log(getName);
+
+function getName(){
+console.log("hi amit");
+}
+
+
+The scope chain (scope and lexical  | environment )
+
+whenever a execution context is created 
+a lexical environment is also created.
+
+lexical environment is a locla memory along with
+the lexical environment with parent
+
+lexical means heirarchy,sequence
+incode tems we can assumed it to be where that specific code is present physically inside the code
+
+lexical environment is a locla memory + ref. lexical environment of parent
+
+
+what is temporal dead zone?
+are let and const declaratipns hoisted?
+diff bet syntax error vs referenceError vs TypeError?
+
+block scope shaddowing
+
+{
+//compund statement
+var a =0;
+console.log(a)
+}
+
+
+closures
+
+a fn bind to lexical scope 
+function along with lexical scope forms a clostures   Q/A
+
+clostures is the combination of a  function together with references to its surrounding state(lexical environment)
+in other words a clostures gives you access to an outer function  scope from an inner function . in javascript  closures
+are created every time a function is created  at function creatioon time.
+
+uses of cloustures 
+- module design 
+- currying
+- functions like once
+- memoize
+- maintaining state in async world
+- setTimeouts
+- Iterators
+- and many more...
+
+
+what are annoniomous function ,
+what are first class function.
+ function statement vs
+ function Expression vs
+function Declarations?
+
+
+
+a();
+b();be have a type error related to hoisting
+
+1  function statement alson known as function declaration
+function a(){
+console.log("a is called...")
+}
+a();
+
+2 function expression
+var b = function(){
+console.log("b is called...")
+}
+b();
+
+calling 1 and 2 is related to hoisting
+
+
+
+
+
+3 anonymous function
+might be syntax error
+function(){
+}
+
+4 named function 
+
+var b = function xyz(){
+console.log()
+}
+
+diff bet parameter and arguments ?
+parameter are the local variable for that function 
+
+arguments when we pass value into function call
+
+first class function(first class citizens)
+pass function as the argument into function call
+the ability to use the valie and passed to or retun to the function are called first class function.
+
+arrow function after es6
+
+// what is  a callbacik function in javascript 
+setTimout(function(){
+console.log('timer')
+},5000)
+
+function x(){
+console.log(x);
+}
+x(function y(){
+console.log(y);
+})
+
+
+//what is a callback function in javascript
+function x(y){
+console.log("x");
+y();
+}
+x(function y(){
+console.log("y");
+}
+)
+
+setTimeout(function(){
+console.log("timer");
+},5000);
+
+
+##callback function and event listener in js
+
+//javascript is a synchronous and single-threaded language
+
+//Blocking the main thread
+
+// Power of callbacks
+
+// closures demo with event listeners
+
+//scope demo with event listeners
+
+//Garbage collection and removeEventlisteners
+
+
+#add clousture to the eventlistener
+
+function attachEventListeners(){
+let count = 0;
+document.getElementById("ClickME").addEventListener("click", function xyz(){
+console.log("button clicked",++count)
+})
+}
+attachEventListeners();
+
+
+##Event Loop
+
+one callstack can do one thing at a time.
+callstack present in the javascript engine and java script engine is in browser.
+all the code of javascript are executed in the callstack.
+
+browser has many things like callstack, localstorage, url, timer, display, bluetooth, location for that we have web apis
+
+like setTimeout()
+DOM api
+fetch()
+localstorage
+console
+location
+global object is window
+
+javascipt engine help us to access these apis
+
+
+eg
+-------------------------------------
+function a(){
+console.log("a");
+}
+a();
+console.log("end");
+---------------------------------------
+if we execute this piece of code 
+
+whenever any javascript of code is run global execution of code will execute
+then GEC wiil push into the call stack
+
+
+EVENT LOOP AND CALLBACK QUEUE
+
+the job of event loop to check the callback queue and pust the fn to call stack
+we also have microtask queue and this is high priority(in case of network and promises callback functon get chance to come in microtask)
+
+all the task which come through promises can come to microtask queue 
+
+
+one more thing we also have (mutation observer)  keeps checking there is any mutation in dom checking
+
+callback queue also known as task Queue
+
+starvation of callback queue
+
+
+javascript run time environment is cruicial point injavascript
+
+it has all in like in a container
+1 js engine
+2 API
+3 event loop
+4 both queue
+
+js engine is not a machine just like a normal program
+
+
+js engine takes a code which is in three phase 
+ CODE
+1 parsing phase (the code broken down into token.) eg(let a = 7;) let ,a, = , 7
+	syntax parser :-
+		take the code conver into ast (abstract syntax tree)(astexplorercode.net)
+2 compilation 
+	JIT compilation<>[optimising]
+	the interpretter convert the code high level code into byte code.and compiler will talk with interpreter to optimise 	the code 
+       some are also AOT ahead of time compiler
+3 execution 
+	Memory heap<>garbage collector                  
+ 	call stack
+
+
+
+
+
+
+
+interpretter:takes your code and exectute line by line(its is fast )
+compiler:- original code is modified then we get the optimal code which is further execute the whole optimal code.(more efficency)
+
+jit is interperted along with compiler
+
+h.w
+# mark and sweep algorithum
+# in lining
+# copy elision
+# inline caching
+
+oilpalm 
+orinocoo
+turbofan
+ignition
+
+
+function programing
+what is high order function
+a function which takes another function as an argument and return function is known as high order function
+
+function x(){					callback fn											
+ console.log("Namaste");           
+}
+
+function y(x){					high order function
+console.log("y")
+}
+
+
+eg 
+
+Mostly we write a code like this
+
+const radius = [3, 1, 2, 4];
+
+const calculateArea = function(radius){
+const output = [];
+for(let i=0;i<radius.length; i++){
+	output.push(Math.PI * radius[i] * radius[i]);
+}
+return output;
+}
+
+
+console.log(calculate(radius));
+
+const calculateCircumference = function (radius){
+	const output = [];
+for(let i=0;i<radius.length; i++){
+	output.push(Math.PI * radius[i]]);
+}
+return output;
+}
+
+
+console.log(calculateCircumference(radius));
+
+
+
+
+const calculateDiameter = function (radius){
+	const output = [];
+for(let i=0;i<radius.length; i++){
+	output.push(2 * radius[i]]);
+}
+return output;
+}
+
+console.log(calculateDiameter(radius));
+
+DRY Primcple
+Don't repeat yourself
+
+
+
+const area = function(radius){
+	return Math.PI * radius * radius;
+}
+
+const circumference = function (radius){
+	return 2 * Math.PI * redius;
+}
+
+const diameter = function(radius){
+	return 2 * radius;;
+}
+
+const calculate = function(radius, logic){
+	const output = [];
+	for(let i = 0; i< radius.length; i++){
+	output.push(logic(radius[i]));
+}
+return output;
+}
+
+console.log(calculate(radius, area));
+console.log(calculate(radius, circumference));
+console.log(calculate(radius, diameter));
+
+console.log(radius.map(area));
+
+
+
+
+callbacks good  vs bad
+
+callback help us to in async function programing.
+
+1 callback hell
+2 inversion of control
+
+
+console.log("1");
+setTimeout(function(){
+console.log("javascript");
+},5000);
+
+console.log("season 2");
+
+
+const cart = ["shoes","pants", "kurta"];
+
+create order 
+then payment 
+then order summary
+update wallet
+
+
+## unreadable and unmaintainable and it is also called pyramid of doom
+
+api.createOrder(cart, function(){
+	api.proceedToPayment(function(){
+		api.showOrderSummary(function(){
+			api.updateWallet()
+})
+}
+)
+}
+)
+
+
+loose control over code
+
+
+
+
+const cart = ["shoes","pants", "kurta"];
+
+
+createOrderApi(cart,function (orderId) {
+	proceedToPayment(orderId); 
+}); // orderId
+--------------------------------------------------------------------------------
+const promise = createOder(cart);
+
+promise.then(unction (orderId) {
+	proceedToPayment(orderId); 
+});
+
+
+promise  is like {data:order}
+
+------------------------------------------------------------------------------
+
+const github_api = "hkjghfjk"
+
+
+const  user = fetch(github_api);
+
+cosnole.log(user);
+
+function(){
+showOrderSummary(paymentInfo);
+}
+updateWalletBalance();
+
+user.then(function(data){
+ cosnoel.log(data)
+})
+
+
+
+promise has two things:-
+1 PromiseState "pending" | fullfilled | rejected and this is imutable data and resolve at once
+2 PromiseResult:"undefined"
+
+what is promise?
+ Promise is a placehoder for certain period of time until we receive a value from async function or container for future value.
+A Promise is an object representing the eventual completion or failure of an asynchronous operation essentially a promise is a returnes object you attach callbacks, instead of passing  callbacks into a function.
+#### Promise, chaining & error handling
+
+const cart = ["shoes", "pants", "kurta"];
+
+//consumer part 
+const promise = createOrder(cart); //orderId
+promise.then(function(){
+
+	//proceedToPayment(cart); // orderId
+})
+
+//producer part
+
+function createUrder(cart){
+	const pr =  new Promise(function(resolve, reject){
+		//reject and resole are the function which are passed by a javascript to us.
+		//createOrder
+		//validate the cart
+		//orderId
+		if(!validateCart(cart)){
+			const arr = new Error(''cart is not valid");
+			reject();
+		}		
+		//logic for create order 
+		const orderId = "12345";
+		if(orderId){
+			resolve(orderId);
+		}
+	});
+
+	return pr;
+}
+
+
+function validateCart(cart){
+	return true;
+}
+
+
+what is async ?
+what is await ?
+How async await works behind the scenes?
+Examples of using async/await
+error handling
+Interviews
+Async await vs Promise.then/.catch
+
+//always returns a promise
+async function getDate(){
+	return "namaste";
+}
+
+const dataPromise = getData();
+console.log(dataPromise);
+
+dataPromise.then((res)=> console.log(res));
+
+const p = new Promise((resolve, reject)=>{
+	resolve("promise resolved value!!");
+})
+
+//start async await
+
+async and await combo are used to handle promises;
+
+function getData(){
+	p.then(res=> console.log(res));
+}
+getData();
+
+
+async function handlePromise(){
+	//JS engine was waiting  for  promise  to resolved  before
+	const val = await p;
+console,log("namaste javascript")
+console.log(val);
+}
+handlePromise();
+
+await is a keyword which is only be used inside  async function.
+
+diving deep into async await 
+
+js engine will not wait for  promise to be resolved.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
