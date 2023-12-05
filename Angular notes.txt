@@ -1,0 +1,74 @@
+# Angular : Angular is a javascript framework which allows you to create reactive single-page-applications(SPAs).
+
+# Angular versioning
+* Angularjs 1
+* Angular  2 ( 2016 )
+* Angular 4
+* Angular 10, 11 ,12,....
+
+framework 
+
+# angular cli
+npm install -g @angular/cli
+
+create app: ng new my-first-app --no-strict --standalone false --routing false
+CSS :yes
+ssr : No
+cd my-first-app
+ng serve
+
+# course structure 
+geeting started 
+the basics 
+componeents and databinding
+directives
+services and dependency injection
+routing
+observables
+forms
+pipes
+http
+Authentication
+Optimizations and ngModules
+Deployment
+Animations and testing
+
+# typescript : more features than vanilla JS
+(e.g. Types, Classes, Interfaces, ...) strong typeing
+
+typescript compiled to javascript
+
+
+# section basics
+keep in mind: Angular in the end is a  js framework, changing your('html') at runtime!
+
+# Components are the key features in the angular
+root component in that nestedt component
+
+* special component like root/app component which bootstap the whole application
+* normal component
+
+
+#  under standing databinding
+ databinding = communication
+communication between TypeScript(Business Logic) and Template(HTML)
+like outputdate from server 
+
+String Interpolation ( {{ data }})
+Property Binding ( [property ] = "data"  )
+
+combination of both : Two-Way-binding ([(ngModel)] = "data")
+
+
+- node version 14.2.13
+- angular version 9.1.15
+- npm 6.14
+
+----------------------------------------------------------------------12/04/2023---------------------------------------------------------------------------------
+Event Handling
+
+property binding we use [] 
+for events parentheses are the signal that we are using event binding 
+
+
+

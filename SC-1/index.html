@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>hello world</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.2/socket.io.js" integrity="sha512-VJ6+sp2E5rFQk05caiXXzQd1wBABpjEj1r5kMiLmGAAgwPItw1YpqsCCBtq8Yr1x6C49/mTpRdXtq8O2RcZhlQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <p>hello world</p>
+    <script>
+        var socket = io('/custom-namespace');
+        socket.on('customEvent',function(data){
+            document.body.innerHTML = '';
+            document.write(data);
+        });
+
+        // socket.on('newuserconnect', function(data){
+        //     document.body.innerHTML = '';
+        //     document.write(data.message);
+        // })
+        // socket.emit('myCustumEventFromClientSide', 'A custom message from client side!');
+        // socket.on('myCustumEvent', function(data){
+        //     document.write(data.description);
+        // })
+    </script>
+</body>
+</html>
